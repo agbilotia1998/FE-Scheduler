@@ -135,6 +135,9 @@ a {
     vertical-align: top;
     white-space: nowrap;
 }
+#pop-speaker-name {
+    color: #000;
+}
 ::selection {
     background-color: $pure-orange;
     color: $white;
