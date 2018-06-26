@@ -35,8 +35,10 @@
   </head>
   <body>
     <div id="main-container" class="ui grid stackable container">
-      {{> scroll}}
-      <div class="main ui grid stackable container" id="session-list">
+        <a class="scroll" href="#" id="down-button" data-scroll-direction="0">
+          <i class="fa fa-chevron-up" aria-hidden="true"></i>
+        </a>
+        <div class="main ui grid stackable container" id="session-list">
         <div class="row" id="schedule-list">
           <div class="middle sixteen wide column">
             <h2 class="filter-heading track-heading text-center" style="text-align: center;margin-bottom: 40px;">
@@ -112,7 +114,7 @@
                     </div>
                     <div class="tracks twelve wide column">
                       {{#sessions}}
-                      <div class="schedule-track" id="{{session_id}}" onclick = "$('#desc-{{session_id}}').toggleClass('hide')">
+                      <div class="schedule-track" id="{{session_id}}">
                         <a class="anchor" id="s-{{session_id}}"></a>
                         <div class="schedule-container">
                           <div class="padding-right-zero">
@@ -120,7 +122,7 @@
                               class="schedule-margin sizeevent event" id="title-{{session_id}}" data-toggle="collapse"
                               data-target="#desc-{{session_id}}"
                               aria-expanded="false"
-                              aria-controls="desc-{{session_id}}">
+                              aria-controls="desc-{{session_id}}"  onclick = "$('#desc-{{session_id}}').toggleClass('hide')">
                               <div class = "features">
                                 <a class = "bookmark" id = "c{{session_id}}" >
                                 <i class="fa fa-star" aria-hidden="true">
@@ -352,7 +354,18 @@
                                           <i class="fa fa-share"></i> Share
                                           </a>
                                           <div class="social-buttons row">
-                                            {{> social}}
+                                            <div class="fb-share facebook social-button">
+                                              <i class="fa fa-facebook fa s-button" aria-hidden=true></i>
+                                            </div>
+                                            <div class="tw-share twitter social-button">
+                                              <i class="fa fa-twitter fa s-button" aria-hidden=true></i>
+                                            </div>
+                                            <div class="go-share google social-button">
+                                              <i class="fa fa-google-plus fa s-button" aria-hidden=true></i>
+                                            </div>
+                                            <div class="li-share linkedin social-button">
+                                              <i class="fa fa-linkedin fa s-button" aria-hidden=true></i>
+                                            </div>
                                             <div class="row social-link">
                                               <input class="speakers-inputbox" type="text" value="base#venue-{{../session_id}}" readonly>
                                             </div>
@@ -371,8 +384,8 @@
                                         <p>
                                         <ul class="title-inline">
                                           <li style="background-color:{{{color}}}; color: {{{font_color}}};"
-                                            class="titlecolor"></li>
-                                          &nbsp;
+                                            class="titlecolor">
+                                          </li>
                                           <li class="blacktext">{{tracktitle}}</li>
                                         </ul>
                                         </p><br>
