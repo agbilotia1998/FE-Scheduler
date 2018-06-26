@@ -6,6 +6,11 @@ body {
     color: $text-color;
     font: 12px 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-top: 1px solid #eee;
+}
 .anchor {
     display: block;
     position: relative;
@@ -120,7 +125,6 @@ a {
     }
 }
 .speakers-inputbox {
-    margin-left: 5px;
     padding: 0;
     vertical-align: top;
     width: 50%;
@@ -442,15 +446,17 @@ margin-right: 2px;
 .social-buttons {
     @include hide;
     margin-top: 5px;
-    padding-left: 15px;
     padding-right: 5px;
 }
 .social-link {
-    padding-left: 10px;
     padding-top: 5px;
 }
 .clickable-link {
     @include cursorpointer;
+}
+.ui.grid .ui.stackable.grid, .ui.segment:not(.vertical) .ui.stackable.page.grid {
+    margin-left: 0.1rem !important;
+    margin-right: 0.1rem !important;
 }
 @media (max-width: 767px) {
     .pop-box {
@@ -805,14 +811,40 @@ a.skip:active, a.skip:focus, a.skip:hover {
     border-radius:50%;
 }
 .speaker-image-large {
-    width:10rem;
-    height:10rem;
+    width:7rem;
+    height:7rem;
     border-radius:50%;
 }
 #audio-block {
     display: block;
     margin-top: 15px;
     padding-left: 15px;
+}
+.facebook {
+    background-color: $facebook-icon;
+}
+.twitter {
+    background-color: $twitter-icon;
+}
+.google {
+    background-color: $google-icon;
+}
+.linkedin {
+    background-color: $linkedin-icon;
+}
+.social-button {
+    @include cursorpointer;
+    color: $white;
+    display: inline-block;
+    height: 25px;
+    text-align: center;
+    width: 25px;
+
+    i {
+        height: 100%;
+        line-height: 25px;
+        width: 100%;
+    }
 }
 #filterInfo {
     display: none;
@@ -899,4 +931,5 @@ a.skip:active, a.skip:focus, a.skip:hover {
 }
 .day-filter, .text-margin {
     margin-bottom: 25px !important;
+    margin-left: 8px;
 }
